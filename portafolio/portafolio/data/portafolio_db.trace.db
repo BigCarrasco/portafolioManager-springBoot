@@ -1,0 +1,3 @@
+2025-03-13 19:54:27.826711-06:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT* FROM PORTAFOLIO,[*]"; expected "identifier"; SQL statement:
+SELECT* FROM PORTAFOLIO, [42001-232]
