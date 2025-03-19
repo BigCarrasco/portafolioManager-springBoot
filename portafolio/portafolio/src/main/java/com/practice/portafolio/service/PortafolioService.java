@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
 @Service
 public class PortafolioService {
@@ -20,18 +20,22 @@ public class PortafolioService {
     public PortafolioService(PortafolioRepository repository, ModelMapper modelMapper) {
         this.repository = repository;
         this.modelMapper = modelMapper;
-    } // Esta cosa no sirve si no se le inyecta el repositorio
+    }
 
     public List<PortafolioResponseDTO> obtenerTodos() {
         return repository.findAll()
                 .stream()
                 .map(portafolio -> modelMapper.map(portafolio, PortafolioResponseDTO.class)) // Convierte cada entidad a DTO
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public Optional<PortafolioResponseDTO> obtenerPorId(Long id) {
         return repository.findById(id)
                 .map(portafolio -> modelMapper.map(portafolio, PortafolioResponseDTO.class));
+    }
+
+    public void eliminar(Long id) {
+        repository.deleteById(id);
     }
 
     public PortafolioResponseDTO actualizar(Long id, PortafolioUpdateDTO updateDTO) {
@@ -60,7 +64,5 @@ public class PortafolioService {
         return modelMapper.map(savedPortafolio, PortafolioResponseDTO.class); // Convierte Entidad guardada a DTO
     }
 
-    public void eliminar(Long id) {
-        repository.deleteById(id);
-    }
+
 }
