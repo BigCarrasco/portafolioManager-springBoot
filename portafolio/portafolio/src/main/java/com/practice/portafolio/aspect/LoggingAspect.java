@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Aspect // Indica que es un aspecto
-@Component //Registra en el contexto para que sea detectado automaticamente
+@Component //Es para ser reconocido en el contexto
 public class LoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController // Es para indicar que es un controlador REST
-@RequestMapping("/api") // Mapea las clases
+@RequestMapping("/retryable") // Mapea las clases
 public class ApiController {
     private final ApiService apiService;
 
@@ -14,7 +14,7 @@ public class ApiController {
         this.apiService = apiService;
     }
 
-    @GetMapping("/data")
+    @GetMapping("/with/restTemplate")
     public String getData() {
         return apiService.obtenerDatosDesdeApi();
     }

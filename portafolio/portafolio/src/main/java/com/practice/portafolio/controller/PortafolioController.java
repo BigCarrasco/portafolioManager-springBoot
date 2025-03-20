@@ -22,7 +22,7 @@ import java.util.Optional;
 @Validated
 public class PortafolioController {
     private final PortafolioService service;
-    //private static final Logger logger = LogManager.getLogger(PortafolioController.class);
+    private static final Logger logger = LogManager.getLogger(PortafolioController.class);
 
     public PortafolioController(PortafolioService service) {
         this.service = service;
@@ -46,7 +46,7 @@ public class PortafolioController {
     @PostMapping(ApiRoutes.CREATE_PORTAFOLIO)
     public PortafolioResponseDTO create(@RequestBody PortafolioRequestDTO portafolioRequestDTO) {
         if(portafolioRequestDTO.getNombreProyecto() == null || portafolioRequestDTO.getNombreProyecto().isEmpty()){
-            //logger.error("Project name cannot be null or empty xxx");
+            logger.error("*** Project name cannot be null or empty ****");
             throw new ValidationException("Nombre del proyecto no puede ser nulo o vacio xxx");
         }
         return service.guardar(portafolioRequestDTO);
@@ -56,7 +56,7 @@ public class PortafolioController {
     public PortafolioResponseDTO update(@PathVariable Long id,@Valid @RequestBody PortafolioUpdateDTO updateDTO) {
         Optional<PortafolioResponseDTO> portafolio = service.obtenerPorId(id);
         if (portafolio.isEmpty()) {
-            throw new ResourceNotFoundException("Portafolio not found with id xxx: " + id);
+            throw new ResourceNotFoundException("*** Portafolio not found with id ***: " + id);
         }
         return service.actualizar(id, updateDTO);
     }

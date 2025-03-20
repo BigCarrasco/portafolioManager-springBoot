@@ -8,7 +8,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import java.util.Date;
 
-@ControllerAdvice
+@ControllerAdvice //Manejo de excepciones
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -17,6 +17,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
+    //
     @ExceptionHandler(ValidationException.class)
     public ResponseEntity<?> validationExceptionHandler(ValidationException ex, WebRequest request)
     {
@@ -24,6 +25,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
+    //Excepción genérica
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> globalExceptionHandler(Exception ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));

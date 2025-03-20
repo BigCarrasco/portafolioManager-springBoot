@@ -6,6 +6,7 @@ import com.practice.portafolio.dto.PortafolioUpdateDTO;
 import com.practice.portafolio.model.Portafolio;
 import com.practice.portafolio.repository.PortafolioRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class PortafolioService {
                 .toList();
     }
 
+    @Cacheable(value= "portafolios", key = "'all'")
     public Optional<PortafolioResponseDTO> obtenerPorId(Long id) {
         return repository.findById(id)
                 .map(portafolio -> modelMapper.map(portafolio, PortafolioResponseDTO.class));
