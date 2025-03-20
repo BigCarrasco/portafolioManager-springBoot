@@ -579,13 +579,13 @@ VALUES (3,'Carlos Gómez', 'CharlieG', '521555666777', '2025-03-14 12:45:00') [2
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2025-03-17 17:09:28.767489-06:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTES" not found; SQL statement:
-INSERT INTO clientes (id, nombre, apellido, email, telefono) VALUES (1, 'Juan', 'Pérez', 'juan.perez@example.com', '555-1234') [42102-232]
+INSERT INTO clientes (_id, nombre, apellido, email, telefono) VALUES (1, 'Juan', 'Pérez', 'juan.perez@example.com', '555-1234') [42102-232]
 2025-03-17 17:09:28.781246-06:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTES" not found; SQL statement:
-INSERT INTO clientes (id, nombre, apellido, email, telefono) VALUES (2, 'María', 'González', 'maria.gonzalez@example.com', '555-5678') [42102-232]
+INSERT INTO clientes (_id, nombre, apellido, email, telefono) VALUES (2, 'María', 'González', 'maria.gonzalez@example.com', '555-5678') [42102-232]
 2025-03-17 17:09:28.784247-06:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTES" not found; SQL statement:
-INSERT INTO clientes (id, nombre, apellido, email, telefono) VALUES (3, 'Carlos', 'Ramírez', 'carlos.ramirez@example.com', '555-9876') [42102-232]
+INSERT INTO clientes (_id, nombre, apellido, email, telefono) VALUES (3, 'Carlos', 'Ramírez', 'carlos.ramirez@example.com', '555-9876') [42102-232]
 2025-03-18 08:10:45.024607-06:00 database: flush
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/MICARRAS/Documents/spring/portafolio-spring/portafolio/portafolio/data/portafolio_db.mv.db [2.3.232/7]" [50000-232]
 	at org.h2.message.DbException.get(DbException.java:212)
