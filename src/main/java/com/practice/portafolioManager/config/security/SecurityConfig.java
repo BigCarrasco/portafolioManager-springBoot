@@ -24,6 +24,11 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        //Protegidos
+                        .requestMatchers(
+                                "/mongodbAPI/usuarios/protected/**",
+                                "/api/portafolio/protected/**"
+                        ).authenticated()
                         .requestMatchers(
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
@@ -34,9 +39,6 @@ public class SecurityConfig {
                                 "/circuitBreaker/*",
                                 "/mongodbAPI/usuarios/**"
                         ).permitAll()
-                        //Protegidos
-                        .requestMatchers("/api/protected/**").authenticated()
-                        .anyRequest().authenticated() // permite a todo lo demás
                 )
                 .httpBasic(httpBasic -> {}); // Habilitar la autenticación básica
         return http.build(); // Construir la configuración
@@ -56,7 +58,7 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        // Codificar la contraseña
+        // Codificar la contraseña porque security necesita de esto
         return  new BCryptPasswordEncoder();
     }
 

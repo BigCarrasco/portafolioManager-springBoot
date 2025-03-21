@@ -3,7 +3,6 @@ package com.practice.portafolioManager.service.usuario;
 import com.practice.portafolioManager.dto.usuario.UsuarioRequestDTO;
 import com.practice.portafolioManager.dto.usuario.UsuarioResponseDTO;
 import com.practice.portafolioManager.dto.usuario.UsuarioUpdateDTO;
-import com.practice.portafolioManager.model.portafolio.Portafolio;
 import com.practice.portafolioManager.model.usuario.Usuario;
 import com.practice.portafolioManager.repository.usuario.UsuarioRepository;
 import org.modelmapper.ModelMapper;
@@ -52,7 +51,7 @@ public class UsuarioService {
                 .map(usuario -> modelMapper.map(usuario, UsuarioResponseDTO.class))
                 .toList();
     }
-    
+
     public UsuarioResponseDTO saveUsuario(UsuarioRequestDTO usuarioRequestDTO){
         Usuario usuario = modelMapper.map(usuarioRequestDTO, Usuario.class);
         Usuario savedUsuario = usuarioRepository.save(usuario);

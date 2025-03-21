@@ -38,3 +38,6 @@ and this way you will name the methods in the future controllers and services.
 
 ## Naming Conventions for instances
 - [entity]Instance ex. portafolioRepository
+
+# PortafolioManager running
+![img.png](PortafolioManager_runningExample.png)

@@ -10,5 +10,5 @@ public class ApiRoutes {
     public static final String GET_ALL_PORTAFOLIO = PORTAFOLIO;
     public static final String GET_PORTAFOLIO_BY_ID = PORTAFOLIO_BY_ID;
     public static final String UPDATE_PORTAFOLIO = PORTAFOLIO_BY_ID;
-    public static final String DELETE_PORTAFOLIO = PORTAFOLIO_BY_ID;
+    public static final String DELETE_PORTAFOLIO = BASE_API + "/portafolio" + "/protected" + "/{id}";
 }

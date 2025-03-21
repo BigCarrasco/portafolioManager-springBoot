@@ -45,7 +45,7 @@ public class UsuarioController {
         return usuarioService.updateUserById(id, usuarioUpdateDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/protected/{id}")
     public String deleteUserById(@PathVariable String id) {
         return usuarioService.deleteUserById(id);
     }
