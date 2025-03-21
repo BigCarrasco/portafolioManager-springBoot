@@ -2,6 +2,7 @@ package com.practice.portafolioManager.controller.usuario;
 
 import com.practice.portafolioManager.dto.usuario.UsuarioRequestDTO;
 import com.practice.portafolioManager.dto.usuario.UsuarioResponseDTO;
+import com.practice.portafolioManager.dto.usuario.UsuarioUpdateDTO;
 import com.practice.portafolioManager.exception.ResourceNotFoundException;
 import com.practice.portafolioManager.exception.ValidationException;
 import com.practice.portafolioManager.service.usuario.UsuarioService;
@@ -31,6 +32,17 @@ public class UsuarioController {
         }
 
         return usuario;
+    }
+
+    @PutMapping("/{id}")
+    public UsuarioResponseDTO updateUserById(@PathVariable String id, @RequestBody UsuarioUpdateDTO usuarioUpdateDTO) {
+        Optional<UsuarioResponseDTO> usuario = usuarioService.getUserById(id);
+
+        if (usuario.isEmpty()) {
+            throw new ResourceNotFoundException("*** Usuario not found with id ***: " + id);
+        }
+
+        return usuarioService.updateUserById(id, usuarioUpdateDTO);
     }
 
     @DeleteMapping("/{id}")

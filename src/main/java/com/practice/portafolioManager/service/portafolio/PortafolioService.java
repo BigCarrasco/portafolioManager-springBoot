@@ -14,28 +14,28 @@ import java.util.Optional;
 
 @Service
 public class PortafolioService {
-    private final PortafolioRepository repository;
+    private final PortafolioRepository portafolioRepository;
     private final ModelMapper modelMapper;
 
     public PortafolioService(PortafolioRepository repository, ModelMapper modelMapper) {
-        this.repository = repository;
+        this.portafolioRepository = repository;
         this.modelMapper = modelMapper;
     }
 
     @Cacheable(value= "portafolios", key = "'all'")
     public Optional<PortafolioResponseDTO> getPortafolioById(Long id) {
-        return repository.findById(id)
+        return portafolioRepository.findById(id)
                 .map(portafolio -> modelMapper.map(portafolio, PortafolioResponseDTO.class));
     }
 
     public PortafolioResponseDTO updatePortafolioById(Long id, PortafolioUpdateDTO updateDTO) {
-        Optional<Portafolio> optionalPortafolio = repository.findById(id);
+        Optional<Portafolio> optionalPortafolio = portafolioRepository.findById(id);
 
         if (optionalPortafolio.isPresent()) {
             Portafolio portafolio = optionalPortafolio.get();
 
             modelMapper.map(updateDTO, portafolio);
-            Portafolio updatedPortafolio = repository.save(portafolio);
+            Portafolio updatedPortafolio = portafolioRepository.save(portafolio);
 
             return modelMapper.map(updatedPortafolio, PortafolioResponseDTO.class);
         }
@@ -44,11 +44,11 @@ public class PortafolioService {
     }
 
     public void deletePortafolioById(Long id) {
-        repository.deleteById(id);
+        portafolioRepository.deleteById(id);
     }
 
     public List<PortafolioResponseDTO> getAllPortafolio() {
-        return repository.findAll()
+        return portafolioRepository.findAll()
                 .stream()
                 .map(portafolio -> modelMapper.map(portafolio, PortafolioResponseDTO.class))
                 .toList();
@@ -56,7 +56,7 @@ public class PortafolioService {
 
     public PortafolioResponseDTO savePortafolio(PortafolioRequestDTO portafolioRequestDTO) {
         Portafolio portafolio = modelMapper.map(portafolioRequestDTO, Portafolio.class);
-        Portafolio savedPortafolio = repository.save(portafolio);
+        Portafolio savedPortafolio = portafolioRepository.save(portafolio);
         return modelMapper.map(savedPortafolio, PortafolioResponseDTO.class);
     }
 }

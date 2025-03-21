@@ -21,16 +21,16 @@ import java.util.Optional;
 @RequestMapping
 @Validated
 public class PortafolioController {
-    private final PortafolioService service;
+    private final PortafolioService portafolioService;
     private static final Logger logger = LogManager.getLogger(PortafolioController.class);
 
     public PortafolioController(PortafolioService service) {
-        this.service = service;
+        this.portafolioService = service;
     }
 
     @GetMapping(ApiRoutes.GET_PORTAFOLIO_BY_ID)
     public Optional<PortafolioResponseDTO> getPortafolioById(@PathVariable Long id) {
-        Optional<PortafolioResponseDTO> portafolio = service.getPortafolioById(id);
+        Optional<PortafolioResponseDTO> portafolio = portafolioService.getPortafolioById(id);
         if (portafolio.isEmpty()) {
             throw new ResourceNotFoundException("*** Portafolio not found with id ***: " + id);
         }
@@ -39,21 +39,22 @@ public class PortafolioController {
 
     @PutMapping(ApiRoutes.UPDATE_PORTAFOLIO)
     public PortafolioResponseDTO updatePortafolioById(@PathVariable Long id,@Valid @RequestBody PortafolioUpdateDTO updateDTO) {
-        Optional<PortafolioResponseDTO> portafolio = service.getPortafolioById(id);
+        Optional<PortafolioResponseDTO> portafolio = portafolioService.getPortafolioById(id);
+
         if (portafolio.isEmpty()) {
             throw new ResourceNotFoundException("*** Portafolio not found with id ***: " + id);
         }
-        return service.updatePortafolioById(id, updateDTO);
+        return portafolioService.updatePortafolioById(id, updateDTO);
     }
 
     @DeleteMapping(ApiRoutes.DELETE_PORTAFOLIO)
     public void deletePortafolioById(@PathVariable Long id) {
-        service.deletePortafolioById(id);
+        portafolioService.deletePortafolioById(id);
     }
 
     @GetMapping(ApiRoutes.GET_ALL_PORTAFOLIO)
     public List<PortafolioResponseDTO> getAllPortafolio() {
-        return service.getAllPortafolio();
+        return portafolioService.getAllPortafolio();
     }
 
     @PostMapping(ApiRoutes.CREATE_PORTAFOLIO)
@@ -62,6 +63,6 @@ public class PortafolioController {
             logger.error("*** Project name cannot be null or empty ****");
             throw new ValidationException("*** Nombre del proyecto no puede ser nulo o vacio ***");
         }
-        return service.savePortafolio(portafolioRequestDTO);
+        return portafolioService.savePortafolio(portafolioRequestDTO);
     }
 }
