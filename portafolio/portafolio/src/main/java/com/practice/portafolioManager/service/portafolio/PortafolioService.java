@@ -60,10 +60,8 @@ public class PortafolioService {
 
 
     public PortafolioResponseDTO guardar(PortafolioRequestDTO portafolioRequestDTO) {
-        Portafolio portafolio = modelMapper.map(portafolioRequestDTO, Portafolio.class); // Convierte DTO a Entidad
+        Portafolio portafolio = modelMapper.map(portafolioRequestDTO, Portafolio.class);
         Portafolio savedPortafolio = repository.save(portafolio);
-        return modelMapper.map(savedPortafolio, PortafolioResponseDTO.class); // Convierte Entidad guardada a DTO
+        return modelMapper.map(savedPortafolio, PortafolioResponseDTO.class);
     }
-
-
 }

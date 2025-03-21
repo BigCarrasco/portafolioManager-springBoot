@@ -30,7 +30,6 @@ public class PortafolioController {
 
     @GetMapping(ApiRoutes.GET_ALL_PORTAFOLIO)
     public List<PortafolioResponseDTO> toList() {
-        //logger.info("Fetching all portfolios");
         return service.obtenerTodos();
     }
 
@@ -38,7 +37,7 @@ public class PortafolioController {
     public Optional<PortafolioResponseDTO> getById(@PathVariable Long id) {
         Optional<PortafolioResponseDTO> portafolio = service.obtenerPorId(id);
         if (portafolio.isEmpty()) {
-            throw new ResourceNotFoundException("Portafolio not found with id xxx: " + id);
+            throw new ResourceNotFoundException("*** Portafolio not found with id ***: " + id);
         }
         return portafolio;
     }
@@ -47,7 +46,7 @@ public class PortafolioController {
     public PortafolioResponseDTO create(@RequestBody PortafolioRequestDTO portafolioRequestDTO) {
         if(portafolioRequestDTO.getNombreProyecto() == null || portafolioRequestDTO.getNombreProyecto().isEmpty()){
             logger.error("*** Project name cannot be null or empty ****");
-            throw new ValidationException("Nombre del proyecto no puede ser nulo o vacio xxx");
+            throw new ValidationException("*** Nombre del proyecto no puede ser nulo o vacio ***");
         }
         return service.guardar(portafolioRequestDTO);
     }
