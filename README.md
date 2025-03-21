@@ -37,4 +37,4 @@ to conserve the order and make it easier to find the methods.
 and this way you will name the methods in the future controllers and services.
 
 ## Naming Conventions for instances
-[entity]Instance ex. portafolioRepository
+- [entity]Instance ex. portafolioRepository
