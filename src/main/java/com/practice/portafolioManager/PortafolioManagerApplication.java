@@ -10,8 +10,8 @@ import org.springframework.retry.annotation.EnableRetry;
 @EnableAspectJAutoProxy
 @EnableRetry
 @EnableCaching
-public class PortafolioApplication {
+public class PortafolioManagerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(PortafolioApplication.class, args);
+		SpringApplication.run(PortafolioManagerApplication.class, args);
 	}
 }

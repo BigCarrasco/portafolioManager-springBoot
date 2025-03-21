@@ -110,7 +110,7 @@
   </component>
   <component name="RunManager">
     <configuration name="PortafolioApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.practice.portafolioManager.PortafolioApplication" />
+      <option name="MAIN_CLASS_NAME" value="com.practice.portafolioManager.PortafolioManagerApplication" />
       <module name="portafolio" />
       <extension name="coverage">
         <pattern>

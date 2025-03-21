@@ -1,6 +1,6 @@
 # Portafolio Manager
 
-This is a project built in framework Spring. Includes next tecnologies:
+This is a project built in framework Spring. Includes next dependencies:
 
 - **Databases**:
   - H2
@@ -28,10 +28,10 @@ This is a project built in framework Spring. Includes next tecnologies:
 It is the order that you need to arrange the methods in the controllers and services, 
 to conserve the order and make it easier to find the methods.
 
-- get[Entity]ById ex. GetPortfolioById
+- get[Entity]ById ex. getPortfolioById
 - update[Entity]ById: updatePortafolioById 
 - delete[Entity]ById: deletePortafolioById
-- getAll[Entity] ex. getAllPortafolios
+- getAll[Entity] ex. getAllPortafolio
 - save[Entity] ex. savePortafolio
 
 and this way you will name the methods in the future controllers and services.
