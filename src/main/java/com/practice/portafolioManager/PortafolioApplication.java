@@ -8,7 +8,7 @@ import org.springframework.retry.annotation.EnableRetry;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy // Habilita aspectos
-@EnableRetry // Habilita reintentos
+@EnableRetry
 @EnableCaching
 public class PortafolioApplication {
 	public static void main(String[] args) {

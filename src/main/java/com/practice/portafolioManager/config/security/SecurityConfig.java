@@ -31,7 +31,8 @@ public class SecurityConfig {
                                 "/swagger-resources/**",
                                 "/webjars/**",
                                 "/api/portafolio/**",
-                                "/circuitBreaker/*"
+                                "/circuitBreaker/*",
+                                "/mongodbAPI/usuarios/**"
                         ).permitAll()
                         //Protegidos
                         .requestMatchers("/api/protected/**").authenticated()

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="22aa67be-5f2d-420f-8aea-34a1048e2382" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/portafolio_db.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/portafolio_db.trace.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/PortafolioApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/aop/LoggingAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/config/automapper/ModelMapperConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/config/cache/RedisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/config/routes/ApiRoutes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/config/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/controller/ApiController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/controller/CircuitBreakerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/controller/PublicController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/controller/portafolio/PortafolioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/controller/usuario/UsuarioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/dto/portafolio/PortafolioRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/dto/portafolio/PortafolioResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/dto/portafolio/PortafolioUpdateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/dto/usuario/UsuarioRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/dto/usuario/UsuarioResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/dto/usuario/UsuarioUpdateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/exception/ErrorDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/exception/ValidationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/model/portafolio/Portafolio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/model/usuario/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/repository/portafolio/PortafolioRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/repository/usuario/UsuarioRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/service/ApiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/service/CircuitBreakerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/service/portafolio/PortafolioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/practice/portafolioManager/service/usuario/UsuarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/practice/portafolioManager/PortafolioApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2uHFihXmfbQpLSorEoi40Y75rxZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ClientesApplication.executor": "Run",
+    "Application.PortafolioApplication.executor": "Run",
+    "Application.UsuariosApplication.executor": "Run",
+    "Maven.portafolio [clean].executor": "Run",
+    "Maven.portafolio [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/MICARRAS/Documents/spring/portafolio-spring",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MICARRAS\Documents\spring\portafolio-spring\portafolio\portafolio\src\main\java\com\practice\portafolioManager\dto\usuario" />
+      <recent name="C:\Users\MICARRAS\Documents\spring\portafolio-spring\portafolio\portafolio\src\main\java\com\practice\portafolio\dto" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.practice" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PortafolioApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.practice.portafolioManager.PortafolioApplication" />
+      <module name="portafolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.practice.portafolioManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PortafolioApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22aa67be-5f2d-420f-8aea-34a1048e2382" name="Changes" comment="" />
+      <created>1741897725700</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741897725700</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
