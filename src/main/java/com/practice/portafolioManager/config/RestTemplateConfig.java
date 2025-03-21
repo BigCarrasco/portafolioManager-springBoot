@@ -4,10 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
-@Configuration // Indica que es una clase de configuración
+@Configuration
 public class RestTemplateConfig {
 
-    @Bean // Indica que es un bean de Spring - contexto de aplicación
+    @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

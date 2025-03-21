@@ -13,7 +13,7 @@ public class LoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
     @Around("execution(* com.practice.portafolio.service.*.*(..))") //PointCut
-    public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable { // 🔹 Nos da control sobre la ejecución del método interceptado.
+    public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
 
         Object result = joinPoint.proceed();

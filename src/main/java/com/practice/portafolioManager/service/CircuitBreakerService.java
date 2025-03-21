@@ -14,7 +14,7 @@ public class CircuitBreakerService {
 
     @CircuitBreaker(name = "circuitBreakerService", fallbackMethod = "fallbackMethod")
     public String llamarApiExterna() {
-        String url = "http://api.example.com/datos"; // URL de una API externa
+        String url = "http://api.example.com/datos"; // fake url
         return restTemplate.getForObject(url, String.class);
     }
 

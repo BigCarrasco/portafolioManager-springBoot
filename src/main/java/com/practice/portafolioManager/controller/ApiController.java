@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController // Es para indicar que es un controlador REST
-@RequestMapping("/retryable") // Mapea las clases
+@RestController
+@RequestMapping("/retryable")
 public class ApiController {
     private final ApiService apiService;
 

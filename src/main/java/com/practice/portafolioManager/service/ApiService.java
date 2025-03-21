@@ -22,13 +22,12 @@ public class ApiService {
     @Retryable(value = {HttpServerErrorException.class}, maxAttempts = 4, backoff = @Backoff(delay = 2500))
     public String obtenerDatosDesdeApi(){
         logger.info("Llamando a la API");
-        String url = "https://api.example.com/datos"; // fake url pa que falle
-
-        return restTemplate.getForObject(url, String.class); // Recibe dos parametros, el primer parametro es la url de la API y el segundo parametro es el tipo de dato que se espera recibir
+        String url = "https://api.example.com/datos"; // fake url on purpose
+        return restTemplate.getForObject(url, String.class);
     }
 
     @Recover
-    public String recuperarError(RestClientException e){ //RestClientException es para manejar errores de cliente
+    public String recuperarError(RestClientException e){
         logger.error("Todos los intentos fallaron: {}", e.getMessage());
         return "No se pudieron obtener los datos. Inténtalo más tarde.";
     }

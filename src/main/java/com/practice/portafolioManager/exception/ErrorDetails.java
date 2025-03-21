@@ -14,7 +14,6 @@ public class ErrorDetails {
         this.details = details;
     }
 
-    // Getters and setters
     public Date getTimestamp() {
         return timestamp;
     }
