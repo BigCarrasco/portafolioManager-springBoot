@@ -23,3 +23,15 @@ This is a project built in framework Spring. Includes next tecnologies:
   - Circuit Breaker
 - **Cache**:
   - Redis
+
+## Naming Conventions for endpoints
+It is the order that you need to arrange the methods in the controllers and services, 
+to conserve the order and make it easier to find the methods.
+
+- get[Entity]ById ex. GetPortfolioById
+- update[Entity]ById: updatePortafolioById 
+- delete[Entity]ById: deletePortafolioById
+- getAll[Entity] ex. getAllPortafolios
+- save[Entity] ex. savePortafolio
+
+and this way you will name the methods in the future controllers and services.

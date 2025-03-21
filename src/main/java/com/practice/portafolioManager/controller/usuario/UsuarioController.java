@@ -1,11 +1,9 @@
 package com.practice.portafolioManager.controller.usuario;
 
-import com.practice.portafolioManager.controller.portafolio.PortafolioController;
 import com.practice.portafolioManager.dto.usuario.UsuarioRequestDTO;
 import com.practice.portafolioManager.dto.usuario.UsuarioResponseDTO;
 import com.practice.portafolioManager.exception.ResourceNotFoundException;
 import com.practice.portafolioManager.exception.ValidationException;
-import com.practice.portafolioManager.model.usuario.Usuario;
 import com.practice.portafolioManager.service.usuario.UsuarioService;
 import org.springframework.web.bind.annotation.*;
 import org.apache.logging.log4j.LogManager;
@@ -24,23 +22,9 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @GetMapping
-    public List<UsuarioResponseDTO> obtenerTodos() {
-        return usuarioService.obtenerTodos();
-    }
-
-    @PostMapping
-    public UsuarioResponseDTO guardarUsuario(@RequestBody UsuarioRequestDTO usuarioRequestDTO) {
-        if(usuarioRequestDTO.nombre() == null || usuarioRequestDTO.nombre().isEmpty()){
-            logger.error("*** Project name cannot be null or empty ****");
-            throw new ValidationException("*** Nombre del usuario no puede ser nulo o vacio ***");
-        }
-        return usuarioService.guardarUsuario(usuarioRequestDTO);
-    }
-
     @GetMapping("/{id}")
-    public Optional<UsuarioResponseDTO> obtenerPorId(@PathVariable String id) {
-        Optional<UsuarioResponseDTO> usuario = usuarioService.obtenerPorId(id);
+    public Optional<UsuarioResponseDTO> getUserById(@PathVariable String id) {
+        Optional<UsuarioResponseDTO> usuario = usuarioService.getUserById(id);
 
         if (usuario.isEmpty()) {
             throw new ResourceNotFoundException("*** Usuario not found with id ***: " + id);
@@ -50,7 +34,21 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public String eliminarPorId(@PathVariable String id) {
-        return usuarioService.eliminarPorId(id);
+    public String deleteUserById(@PathVariable String id) {
+        return usuarioService.deleteUserById(id);
+    }
+
+    @GetMapping
+    public List<UsuarioResponseDTO> getAllUsuarios() {
+        return usuarioService.getAllUsuarios();
+    }
+
+    @PostMapping
+    public UsuarioResponseDTO saveUsuario(@RequestBody UsuarioRequestDTO usuarioRequestDTO) {
+        if(usuarioRequestDTO.nombre() == null || usuarioRequestDTO.nombre().isEmpty()){
+            logger.error("*** Project name cannot be null or empty ****");
+            throw new ValidationException("*** Nombre del usuario no puede ser nulo o vacio ***");
+        }
+        return usuarioService.saveUsuario(usuarioRequestDTO);
     }
 }

@@ -28,40 +28,40 @@ public class PortafolioController {
         this.service = service;
     }
 
-    @GetMapping(ApiRoutes.GET_ALL_PORTAFOLIO)
-    public List<PortafolioResponseDTO> toList() {
-        return service.obtenerTodos();
-    }
-
     @GetMapping(ApiRoutes.GET_PORTAFOLIO_BY_ID)
-    public Optional<PortafolioResponseDTO> getById(@PathVariable Long id) {
-        Optional<PortafolioResponseDTO> portafolio = service.obtenerPorId(id);
+    public Optional<PortafolioResponseDTO> getPortafolioById(@PathVariable Long id) {
+        Optional<PortafolioResponseDTO> portafolio = service.getPortafolioById(id);
         if (portafolio.isEmpty()) {
             throw new ResourceNotFoundException("*** Portafolio not found with id ***: " + id);
         }
         return portafolio;
     }
 
+    @PutMapping(ApiRoutes.UPDATE_PORTAFOLIO)
+    public PortafolioResponseDTO updatePortafolioById(@PathVariable Long id,@Valid @RequestBody PortafolioUpdateDTO updateDTO) {
+        Optional<PortafolioResponseDTO> portafolio = service.getPortafolioById(id);
+        if (portafolio.isEmpty()) {
+            throw new ResourceNotFoundException("*** Portafolio not found with id ***: " + id);
+        }
+        return service.updatePortafolioById(id, updateDTO);
+    }
+
+    @DeleteMapping(ApiRoutes.DELETE_PORTAFOLIO)
+    public void deletePortafolioById(@PathVariable Long id) {
+        service.deletePortafolioById(id);
+    }
+
+    @GetMapping(ApiRoutes.GET_ALL_PORTAFOLIO)
+    public List<PortafolioResponseDTO> getAllPortafolio() {
+        return service.getAllPortafolio();
+    }
+
     @PostMapping(ApiRoutes.CREATE_PORTAFOLIO)
-    public PortafolioResponseDTO create(@RequestBody PortafolioRequestDTO portafolioRequestDTO) {
+    public PortafolioResponseDTO savePortafolio(@RequestBody PortafolioRequestDTO portafolioRequestDTO) {
         if(portafolioRequestDTO.getNombreProyecto() == null || portafolioRequestDTO.getNombreProyecto().isEmpty()){
             logger.error("*** Project name cannot be null or empty ****");
             throw new ValidationException("*** Nombre del proyecto no puede ser nulo o vacio ***");
         }
-        return service.guardar(portafolioRequestDTO);
-    }
-
-    @PutMapping(ApiRoutes.UPDATE_PORTAFOLIO)
-    public PortafolioResponseDTO update(@PathVariable Long id,@Valid @RequestBody PortafolioUpdateDTO updateDTO) {
-        Optional<PortafolioResponseDTO> portafolio = service.obtenerPorId(id);
-        if (portafolio.isEmpty()) {
-            throw new ResourceNotFoundException("*** Portafolio not found with id ***: " + id);
-        }
-        return service.actualizar(id, updateDTO);
-    }
-
-    @DeleteMapping(ApiRoutes.DELETE_PORTAFOLIO)
-    public void delete(@PathVariable Long id) {
-        service.eliminar(id);
+        return service.savePortafolio(portafolioRequestDTO);
     }
 }

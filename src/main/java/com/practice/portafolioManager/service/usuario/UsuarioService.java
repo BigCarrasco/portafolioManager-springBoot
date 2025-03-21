@@ -20,25 +20,25 @@ public class UsuarioService {
         this.modelMapper = modelMapper;
     }
 
-    public List<UsuarioResponseDTO> obtenerTodos(){
+    public List<UsuarioResponseDTO> getAllUsuarios(){
         return usuarioRepository.findAll()
                 .stream()
                 .map(usuario -> modelMapper.map(usuario, UsuarioResponseDTO.class))
                 .toList();
     }
 
-    public UsuarioResponseDTO guardarUsuario(UsuarioRequestDTO usuarioRequestDTO){
+    public UsuarioResponseDTO saveUsuario(UsuarioRequestDTO usuarioRequestDTO){
         Usuario usuario = modelMapper.map(usuarioRequestDTO, Usuario.class);
         Usuario savedUsuario = usuarioRepository.save(usuario);
         return modelMapper.map(savedUsuario, UsuarioResponseDTO.class);
     }
 
-    public Optional<UsuarioResponseDTO>obtenerPorId(String id){
+    public Optional<UsuarioResponseDTO>getUserById(String id){
         return usuarioRepository.findById(id)
                 .map(usuario -> modelMapper.map(usuario, UsuarioResponseDTO.class));
     }
 
-    public String eliminarPorId(String id){
+    public String deleteUserById(String id){
         usuarioRepository.deleteById(id);
         return "User Deleted";
     }
