@@ -1,23 +1,25 @@
 # Portafolio Manager
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-<div align="center">
-  <img height="60" src="https://en.wikipedia.org/wiki/File:Spring_Boot.svg">
-  <h1>Backend Interview</h1>
-</div>
+This is a project built in framework Spring. Includes next tecnologies:
 
-## Entities
-
-### Portafolio
-### Usuario 
-
-## Project Structure
-
-aop: Contains aspect-oriented programming (AOP) components like LoggingAspect.
-config: Configuration classes for various components like RestTemplate, ModelMapper, Redis, and security settings.
-controller: REST controllers for handling HTTP requests, including ApiController, CircuitBreakerController, PublicController, and specific controllers for portafolio and usuario.
-dto: Data Transfer Objects (DTOs) for portafolio and usuario.
-exception: Custom exception handling classes.
-model: Entity classes for portafolio and usuario.
-repository: Repositories for database interactions.
-service: Service classes implementing business logic.
+- **Databases**:
+  - H2
+  - MongoDB
+- **Security**:
+  - Spring Security
+- **Aspects**:
+  - AOP (Programación Orientada a Aspectos)
+- **Comunicación**:
+  - RestTemplate
+  - Retryable
+- **Monitoring and Doc**:
+  - Actuator
+  - Swagger
+- **Exception Handler**:
+  - Global Exception Handler
+- **Loggers**:
+  - Logger
+- **Microservice design pattern**:
+  - Circuit Breaker
+- **Cache**:
+  - Redis
