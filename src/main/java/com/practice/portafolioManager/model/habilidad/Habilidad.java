@@ -25,5 +25,5 @@ public class Habilidad {
 
     @ManyToOne
     @JoinColumn(name = "portafolio_id", referencedColumnName = "id")
-    private Portafolio portafolio;
+    private Portafolio portafolio; // automapea el objeto a un id
 }

@@ -119,6 +119,19 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>10.20.1</version>
+                <configuration>
+                    <url>jdbc:h2:file:./data/portafolio_db</url>
+                    <user>sa</user>
+                    <password></password>
+                    <locations>
+                        <location>classpath:db/migration</location>
+                    </locations>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
