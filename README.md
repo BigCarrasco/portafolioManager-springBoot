@@ -4,6 +4,7 @@ This is a project built in framework Spring. Includes next dependencies:
 
 - **Databases**:
   - H2
+  - Flyway
   - MongoDB
 - **Security**:
   - Spring Security

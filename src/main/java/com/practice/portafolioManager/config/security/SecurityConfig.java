@@ -23,6 +23,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable())) // con esto h2 funciona como frame
                 .authorizeHttpRequests(auth -> auth
                         //Protegidos
                         .requestMatchers(
@@ -37,7 +38,8 @@ public class SecurityConfig {
                                 "/webjars/**",
                                 "/api/portafolio/**",
                                 "/circuitBreaker/*",
-                                "/mongodbAPI/usuarios/**"
+                                "/mongodbAPI/usuarios/**",
+                                "/h2-console/**"
                         ).permitAll()
                 )
                 .httpBasic(httpBasic -> {}); // Habilitar la autenticación básica
