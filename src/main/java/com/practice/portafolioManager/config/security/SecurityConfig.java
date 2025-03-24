@@ -23,24 +23,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .csrf(csrf -> csrf.disable())
-                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable())) // con esto h2 funciona como frame
+                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable())) // con esto h2 admite el iframe y security no lo reconoce como bicho
                 .authorizeHttpRequests(auth -> auth
                         //Protegidos
                         .requestMatchers(
                                 "/mongodbAPI/usuarios/protected/**",
                                 "/api/portafolio/protected/**"
-                        ).authenticated()
-                        .requestMatchers(
-                                "/swagger-ui/**",
-                                "/swagger-ui.html",
-                                "/v3/api-docs/**",
-                                "/swagger-resources/**",
-                                "/webjars/**",
-                                "/api/portafolio/**",
-                                "/circuitBreaker/*",
-                                "/mongodbAPI/usuarios/**",
-                                "/h2-console/**"
-                        ).permitAll()
+                        ).authenticated()                                
+                        .anyRequest().permitAll()
                 )
                 .httpBasic(httpBasic -> {}); // Habilitar la autenticación básica
         return http.build(); // Construir la configuración

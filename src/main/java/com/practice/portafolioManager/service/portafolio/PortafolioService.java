@@ -5,6 +5,9 @@ import com.practice.portafolioManager.dto.portafolio.PortafolioResponseDTO;
 import com.practice.portafolioManager.dto.portafolio.PortafolioUpdateDTO;
 import com.practice.portafolioManager.model.portafolio.Portafolio;
 import com.practice.portafolioManager.repository.portafolio.PortafolioRepository;
+
+import jakarta.transaction.Transactional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -43,6 +46,7 @@ public class PortafolioService {
         return null; // Opcionalmente lanzar una excepción personalizada
     }
 
+    @Transactional
     public void deletePortafolioById(Long id) {
         portafolioRepository.deletePortafolioById(id);
     }
