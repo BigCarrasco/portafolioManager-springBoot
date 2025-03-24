@@ -17,20 +17,20 @@ public class PortafolioService {
     private final PortafolioRepository portafolioRepository;
     private final ModelMapper modelMapper;
 
+
     public PortafolioService(PortafolioRepository repository, ModelMapper modelMapper) {
         this.portafolioRepository = repository;
         this.modelMapper = modelMapper;
     }
 
-    @Cacheable(value= "portafolios", key = "'all'")
+    //@Cacheable(value= "portafolios", key = "'all'")
     public Optional<PortafolioResponseDTO> getPortafolioById(Long id) {
-        return portafolioRepository.findById(id)
+        return portafolioRepository.findPortafolioById(id)
                 .map(portafolio -> modelMapper.map(portafolio, PortafolioResponseDTO.class));
     }
 
     public PortafolioResponseDTO updatePortafolioById(Long id, PortafolioUpdateDTO updateDTO) {
-        Optional<Portafolio> optionalPortafolio = portafolioRepository.findById(id);
-
+        Optional<Portafolio> optionalPortafolio = portafolioRepository.findPortafolioById(id);
         if (optionalPortafolio.isPresent()) {
             Portafolio portafolio = optionalPortafolio.get();
 
@@ -44,7 +44,7 @@ public class PortafolioService {
     }
 
     public void deletePortafolioById(Long id) {
-        portafolioRepository.deleteById(id);
+        portafolioRepository.deletePortafolioById(id);
     }
 
     public List<PortafolioResponseDTO> getAllPortafolio() {

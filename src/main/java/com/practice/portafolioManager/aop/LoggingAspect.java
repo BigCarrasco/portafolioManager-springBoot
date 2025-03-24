@@ -12,10 +12,9 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Around("execution(* com.practice.portafolio.service.*.*(..))") //PointCut
+    @Around("execution(*com.practice.portafolioManager.service..*.*(..))") //PointCut
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
-
         Object result = joinPoint.proceed();
 
         long executionTime = System.currentTimeMillis() - start;

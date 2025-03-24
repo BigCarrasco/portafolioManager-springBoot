@@ -22,7 +22,7 @@ public class UsuarioService {
     }
 
     public Optional<UsuarioResponseDTO>getUserById(String id){
-        return usuarioRepository.findById(id)
+        return usuarioRepository.findUsuarioById(id)
                 .map(usuario -> modelMapper.map(usuario, UsuarioResponseDTO.class));
     }
 
