@@ -1,0 +1,2 @@
+ALTER TABLE HABILIDADES
+DROP COLUMN fecha_creacion;
