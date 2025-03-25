@@ -20,25 +20,32 @@ public class SecurityConfig {
     // Para que meteria los beans?
     // Configuración de la seguridad
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
                 .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable())) // con esto h2 admite el iframe y security no lo reconoce como bicho
+                // Autorizacion
                 .authorizeHttpRequests(auth -> auth
                         //Protegidos
                         .requestMatchers(
                                 "/mongodbAPI/usuarios/protected/**",
                                 "/api/portafolio/protected/**"
-                        ).authenticated()                                
+                        ).authenticated()
                         .anyRequest().permitAll()
                 )
-                .httpBasic(httpBasic -> {}); // Habilitar la autenticación básica
+                // OAUTH
+                .oauth2Login(oauth2 -> oauth2
+                        .defaultSuccessUrl("/welcome", true)
+                )
+                // BASIC AUTH
+                .httpBasic(httpBasic -> {});
+
         return http.build(); // Construir la configuración
     }
 
 
     @Bean
-    public UserDetailsService userDetailsService(){
+    public UserDetailsService userDetailsService() {
         // Crear un usuario en memoria
         UserDetails user = User.builder()
                 .username("user")
@@ -49,9 +56,9 @@ public class SecurityConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         // Codificar la contraseña porque security necesita de esto
-        return  new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
 
 }
