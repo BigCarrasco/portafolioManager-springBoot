@@ -38,3 +38,5 @@ build/
 ### .Env ###
 .env
 *.env
+
+application.properties
