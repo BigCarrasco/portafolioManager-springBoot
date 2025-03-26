@@ -27,6 +27,7 @@ public class AuthController {
 
     @GetMapping("/token")
     public Map<String, Object> getToken(@AuthenticationPrincipal OAuth2User user) {
+
         Map<String, Object> claims = new HashMap<>();
         claims.put("name", user.getAttribute("name"));
         claims.put("email", user.getAttribute("email"));

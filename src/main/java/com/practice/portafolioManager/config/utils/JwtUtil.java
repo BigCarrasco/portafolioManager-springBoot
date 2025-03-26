@@ -23,6 +23,6 @@ public class JwtUtil {
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(SignatureAlgorithm.HS256, secret)
-                .compact();
+                .compact(); //serializa
     }
 }

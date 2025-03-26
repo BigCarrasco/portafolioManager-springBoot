@@ -35,7 +35,7 @@ public class SecurityConfig {
                 )
                 // OAUTH
                 .oauth2Login(oauth2 -> oauth2
-                        .defaultSuccessUrl("/welcome", true)
+                        .defaultSuccessUrl("/api/auth/token", true)
                 )
                 // BASIC AUTH
                 .httpBasic(httpBasic -> {});
